@@ -1,0 +1,28 @@
+# ---------- Private: never upload ----------
+Presentations/
+
+# ---------- Python virtual environment ----------
+ia2/
+venv/
+.venv/
+
+# ---------- Python cache ----------
+__pycache__/
+*.pyc
+
+# ---------- Personal data created when the app runs ----------
+user_feedback/
+mnist_cnn_user.h5
+mnist_cnn_user.json
+custom_dataset/
+
+# ---------- Old / unused files ----------
+mnist_cnn_personalized.h5
+CODE.docx
+
+# ---------- Editor and OS files ----------
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store

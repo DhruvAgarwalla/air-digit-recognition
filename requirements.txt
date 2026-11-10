@@ -1,0 +1,8 @@
+# Air-Drawn Digit Recognition - Python 3.9 to 3.12 (tested on 3.12)
+# Install with:  pip install -r requirements.txt
+
+tensorflow==2.16.1
+keras==3.11.3
+mediapipe==0.10.21
+opencv-contrib-python==4.11.0.86
+numpy==1.26.4
