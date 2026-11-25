@@ -73,7 +73,7 @@ pip install -r requirements.txt
 ### Run
 
 ```bash
-python prototype_04.4.py
+python app.py
 ```
 
 The first launch takes 10–20 seconds while TensorFlow loads. A menu window then opens. Press **R** to start drawing.
@@ -111,14 +111,18 @@ CNN (MNIST) ──► top-3 digits + confidence on screen
 ## Project structure
 
 ```
-├── prototype_04.4.py          # main application (latest version)
-├── mnist_cnn.h5               # base digit model (MNIST CNN)
-├── emnist_byclass_best.h5     # 62-class model (0-9, A-Z, a-z), used by older prototypes
-├── emnist_uppercase.h5        # 26-class model (A-Z), used by older prototypes
-├── emnist_upper_digits.h5     # 36-class model (0-9 + A-Z), used by older prototypes
+├── app.py                        # main application (prototype 4.4)
+├── mnist_cnn.h5                  # digit model (MNIST CNN)
 ├── requirements.txt
-├── notes.txt                  # feature ideas
-└── prototypes/                # earlier versions, kept to show the project's evolution
+├── README.md
+├── LICENSE
+└── prototypes/                   # earlier versions, kept to show the project's evolution
+    ├── prototype_03.py … prototype_04.3_2.py
+    ├── collect_dataset.py        # tool to record a custom air-drawn dataset
+    ├── debug_preprocess.py       # mouse-drawing test for the 36-class model
+    ├── emnist_byclass_best.h5    # 62-class model (0-9, A-Z, a-z)
+    ├── emnist_uppercase.h5       # 26-class model (A-Z)
+    └── emnist_upper_digits.h5    # 36-class model (0-9 + A-Z)
 ```
 
 Files created when you use the app (not part of the repo): `user_feedback/`, `mnist_cnn_user.h5`, `mnist_cnn_user.json`.
@@ -138,22 +142,26 @@ Files created when you use the app (not part of the repo): `user_feedback/`, `mn
 | 04.1 / 04.2 | Start menu: Numbers or Alphabets, Personalize or Recognize; uppercase-only model |
 | 04.3 | Live corrections with in-memory fine-tuning |
 | 04.3_2 | Feedback saved to disk, automatic fine-tuning at 100 samples |
-| **04.4** | **Digits-only rewrite:** fixed inverted model input (big accuracy gain), MNIST-style centring, multi-stroke digits, safe personalisation, smoother drawing, corrections typed in the window |
+| **04.4** (`app.py`) | **Digits-only rewrite:** fixed inverted model input (big accuracy gain), MNIST-style centring, multi-stroke digits, safe personalisation, smoother drawing, corrections typed in the window |
 
-The older prototypes (03 onwards) are in `prototypes/`. Run them **from the main folder** so they can find the model files, for example:
+The older prototypes (03 onwards) are in `prototypes/`. Run them **from inside that folder** so they find their models, for example:
 
 ```bash
-python prototypes/prototype_04.3_2.py
+cd prototypes
+python prototype_04.3_2.py
 ```
+
+Any files they create (personalised models, feedback samples) stay inside `prototypes/`, separate from `app.py`'s data.
 
 ---
 
 ## Future work
 
-- Recognise two-digit numbers (0–99)
-- Palm as a region eraser (erase only part of the drawing)
-- Bring uppercase letters back with the 4.4 improvements
-- AR/VR and mobile deployment (TensorFlow Lite)
+- **Two-digit numbers (0–99):** split the canvas into separate digits and recognise each one
+- **Palm as a region eraser:** erase only the part of the drawing under the palm, instead of clearing everything
+- **Alternative gesture scheme:** index finger only moves the cursor, index + middle finger draws (an option for users who find it more natural)
+- **Uppercase letters (A–Z):** bring back alphabet recognition with the 4.4 preprocessing and personalisation fixes
+- **AR/VR and mobile:** deploy on headsets and phones using TensorFlow Lite
 
 ## Built with
 

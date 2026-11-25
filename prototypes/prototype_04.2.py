@@ -260,7 +260,7 @@ if __name__ == "__main__":
     # Load models
     if mode == 'N':
         labels = get_mnist_labels()
-        model = load_model("mnist_cnn.h5")
+        model = load_model("../mnist_cnn.h5")
     else:
         labels = get_emnist_labels()
         model = load_model("emnist_uppercase.h5")

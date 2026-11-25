@@ -67,7 +67,7 @@ def personalize_model():
     the last layer of the CNN on those examples, and returns the personalized model.
     """
     # 1) Load the base model and prepare it for fine-tuning
-    base_model = load_model("mnist_cnn.h5")
+    base_model = load_model("../mnist_cnn.h5")
     ft_model = get_finetune_model(base_model)
 
     # 2) Parameters for few-shot collection
@@ -318,7 +318,7 @@ if __name__ == "__main__":
     if mode == 'P':
         model = personalize_model()
     else:
-        model = load_model("mnist_cnn.h5")
+        model = load_model("../mnist_cnn.h5")
 
     # Run the recognition loop using the chosen model
     recognition_loop(model)

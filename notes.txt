@@ -1,6 +1,0 @@
-prototype 4: 
-1) can detect 0-99
-2) better accuracy
-3) use index to only navigate the cursor
-4) use both index and middle finger to draw digits
-5) the palm acts like a region specific eraser

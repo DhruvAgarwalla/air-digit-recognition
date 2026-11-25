@@ -206,9 +206,9 @@ if __name__ == "__main__":
     cv2.destroyWindow("Startup Menu")
 
     if mode == 'P':
-        base_model = load_model("mnist_cnn.h5")
+        base_model = load_model("../mnist_cnn.h5")
         model = personalize_model(base_model)
     else:
-        model = load_model("mnist_cnn.h5")
+        model = load_model("../mnist_cnn.h5")
 
     recognition_loop(model)

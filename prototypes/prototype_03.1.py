@@ -46,7 +46,7 @@ def get_finetune_model(original_model):
 # Personalization Routine
 # -------------------------------------------------------------------
 def personalize_model():
-    base_model = load_model("mnist_cnn.h5")
+    base_model = load_model("../mnist_cnn.h5")
     ft_model = get_finetune_model(base_model)
 
     examples_per_digit = 2
@@ -268,5 +268,5 @@ if __name__ == "__main__":
         model = personalize_model()
         recognition_loop(model)
     elif mode == 'R':
-        model = load_model("mnist_cnn.h5")
+        model = load_model("../mnist_cnn.h5")
         recognition_loop(model)

@@ -16,7 +16,7 @@ ALPHA_FEEDBACK = os.path.join(FEEDBACK_DIR, "alphabets")
 os.makedirs(DIGIT_FEEDBACK, exist_ok=True)
 os.makedirs(ALPHA_FEEDBACK, exist_ok=True)
 
-DIGIT_MODEL_PATH = "mnist_cnn.h5"
+DIGIT_MODEL_PATH = "../mnist_cnn.h5"
 ALPHA_MODEL_PATH = "emnist_uppercase.h5"
 
 # ======================================
